@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
+import { CommitsModule } from './modules/commits/commits.module';
 import configuration from './config/configuration';
 
 @Module({
@@ -9,6 +10,7 @@ import configuration from './config/configuration';
       cache: true,
       isGlobal: true,
     }),
+    CommitsModule,
   ],
 })
 export class AppModule {}
