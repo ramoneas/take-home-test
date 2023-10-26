@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ContentList from "./components/content/ContentList";
 import apiService from "./services/apiService";
+import Title from "./components/Title";
 
 function App() {
   const [content, setContent] = useState([]);
@@ -11,7 +12,7 @@ function App() {
 
   return (
     <>
-      <h1>git commit history</h1>
+      <Title />
       <ContentList content={content} />
     </>
   );
