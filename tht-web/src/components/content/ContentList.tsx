@@ -13,10 +13,14 @@ const ContentList = ({ content }) => {
         <li key={item.id}>
           <div>
             <h4>{item.id}</h4>
+            <p>
+              <img src={item.avatar_url}></img>
+            </p>
             <p>message: {item.message}</p>
             <p>Author: {item.commit_author}</p>
-            <p>Changes: {item.changes_url}</p>
-            <p>avatar: {item.avatar_url}</p>
+            <p>
+              <a href={item.changes_url}>view changes</a>
+            </p>
           </div>
         </li>
       ))}
