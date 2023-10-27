@@ -22,7 +22,7 @@ const CommitList = ({ commit }: CommitListProps) => {
             <div className="flex justify-between items-center py-1">
               <div className="flex items-center space-x-2">
                 <img
-                  className="rounded-full w-10 h-10"
+                  className="rounded-full w-8 h-8"
                   src={item.avatar_url}
                 ></img>
                 <p>
