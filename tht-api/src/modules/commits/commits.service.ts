@@ -1,3 +1,5 @@
+import * as moment from 'moment';
+
 import { Injectable } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import { firstValueFrom } from 'rxjs';
@@ -6,6 +8,9 @@ import { AxiosResponse } from 'axios';
 
 interface Commit {
   message: string;
+  committer: {
+    date: string;
+  };
 }
 
 interface Committer {
@@ -49,7 +54,15 @@ function extractRelevantData(response: AxiosResponse<any, any>) {
         commit_author: committer.login,
         changes_url: html_url,
         avatar_url: committer.avatar_url,
+        date: calculateTimePassed(commit.committer.date),
       };
     },
   );
+}
+
+function calculateTimePassed(date: string) {
+  const commitDate = moment(date);
+  const timePassed = moment().diff(commitDate);
+
+  return moment.duration(timePassed).humanize();
 }
