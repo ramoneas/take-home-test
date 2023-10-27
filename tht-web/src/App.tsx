@@ -1,19 +1,23 @@
 import { useEffect, useState } from "react";
-import ContentList from "./components/content/ContentList";
+import CommitList from "./components/commit/CommitList";
 import apiService from "./services/apiService";
 import Title from "./components/Title";
 
 function App() {
-  const [content, setContent] = useState([]);
+  const [commit, setCommit] = useState([]);
 
   useEffect(() => {
-    apiService.fetchAllCommits().then((data) => setContent(data));
+    apiService.fetchAllCommits().then((data) => setCommit(data));
   }, []);
 
   return (
     <>
-      <Title />
-      <ContentList content={content} />
+      <main className="bg-zinc-900  text-white min-h-screen p-10">
+        <div className=" container mx-auto p-5 rounded-lg">
+          <Title />
+          <CommitList commit={commit} />
+        </div>
+      </main>
     </>
   );
 }
