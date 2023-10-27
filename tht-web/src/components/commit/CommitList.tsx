@@ -30,7 +30,7 @@ const CommitList = ({ commit }: CommitListProps) => {
                     ? "from GitHub"
                     : item.commit_author}
                 </p>
-                <p className="text-gray-600 ">committed on {item.date}</p>
+                <p className="text-gray-600 ">committed {item.date} ago</p>
               </div>
               <a
                 className="hover:text-blue-700 rounded bg-slate-700 px-3 py-1 text-gray-300"
