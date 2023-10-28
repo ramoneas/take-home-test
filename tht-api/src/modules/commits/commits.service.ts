@@ -28,13 +28,17 @@ export class CommitsService {
     const repo = this.configService.get('gh.repo_name');
     const username = this.configService.get('gh.username');
 
-    const response = await firstValueFrom(
-      this.httpService.get(
-        `https://api.github.com/repos/${username}/${repo}/commits`,
-      ),
-    );
+    try {
+      const response = await firstValueFrom(
+        this.httpService.get(
+          `https://api.github.com/repos/${username}/${repo}/commits`,
+        ),
+      );
 
-    return extractRelevantData(response);
+      return extractRelevantData(response);
+    } catch (err) {
+      return err.response.data;
+    }
   }
 }
 
