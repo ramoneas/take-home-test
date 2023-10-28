@@ -31,6 +31,11 @@ cd tht-api
 ```
 
 - **Once we are inside the tht-api folder, we can start the project. Run the API server with the following command.**
+- **Download the dependencies**
+```bash
+npm install
+```
+- **Running the api**
 ```bash
 npm run start:dev
 ```
@@ -47,6 +52,11 @@ cd ..
 cd tht-web
 ```
 - **Once we are inside the tht-web folder, we can start the project. Start the Web page with the following command.**
+- - **Download the dependencies**
+```bash
+npm install
+```
+- **Run the Web**
 ```bash
 npm run dev
 ```
