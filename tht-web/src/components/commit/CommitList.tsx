@@ -9,14 +9,14 @@ type CommitRequest = {
   date: string;
 };
 
-type CommitListProps = { commit: CommitRequest[] };
+type CommitListProps = { commits: CommitRequest[] };
 
-const CommitList = ({ commit }: CommitListProps) => {
+const CommitList = ({ commits }: CommitListProps) => {
   return (
     <ul>
-      {!commit.length
+      {!commits.length
         ? "GitHub Rate Limit Exceeded"
-        : commit.map((item) => (
+        : commits.map((item) => (
             <li
               key={item.id}
               className="px-3 py-1 rounded border border-gray-600"
